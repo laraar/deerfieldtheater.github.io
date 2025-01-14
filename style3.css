@@ -1,0 +1,1107 @@
+/** @format */
+
+/* The env(safe-area-insert) item makes it so the notch 
+in iPhone or the like will not pose a problem */
+html {
+  height: 100%;
+  font-size: 15px;
+  padding: env(safe-area-inset);
+}
+
+/* The body has a solid purple background so that if there is any
+delay in loading the repeating tile, it will be okay. */
+body {
+  background-color: #3d0465;
+  height: 100%;
+  margin: 0;
+  background-repeat: repeat;
+  background-image: url("images/embossed.webp");
+  background-size: 58vw;
+}
+/* Make the repeating background image a bit larger when narrower than 
+100px display, to avoid havign it be so small. */
+@media screen and (max-width: 1000px) {
+  body {
+    background-size: 85vw;
+  }
+}
+
+/* This is the website header div. It has a transparent background, 
+which makes the background almost white, for good visibility */
+.header {
+  width: 100vw;
+  height: auto;
+  vertical-align: center;
+  padding-top: 10px;
+  padding-bottom: calc(1.9 * 0.8vw);
+  margin: 0;
+  background: rgb(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+/* This the theater program header image. With later media query, 
+its width becomes dynamic for narrow than 1317 and 1177 */
+#program-header {
+  height: 135px;
+  margin: auto;
+  padding-bottom: calc(1.9 * 0.8vw);
+  text-align: center;
+  display: block;
+  z-index: 1;
+}
+
+/* Everything after the page header is in hte "afterheader" div,with a continued gradient 
+that starts with the same transparency as the header. The afterheader does not have a height value
+so that it will be as tall as needed, to avoid having its gradient stop prematurely */
+.after-header {
+  width: 100vw;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8) 0px,
+    rgba(255, 255, 255, 0.6) 10vw,
+    rgba(255, 255, 255, 0.3) 20vw,
+    rgba(255, 255, 255, 0) 40vw
+  );
+  z-index: 1;
+}
+
+/* The navigation bar scales with the page width, using the variable cw (content width) 
+to avoid the need for small fractions.*/
+#nav-bar {
+  --cw: 0.8vw;
+  width: calc(var(--cw) * 100);
+  margin: auto;
+  font-size: 25px;
+  position: relative;
+  padding: 0;
+  left: 0;
+  top: 0;
+  height: calc(var(--cw) * 4.72);
+  border-bottom: calc(var(--cw) * 0.25) solid rgb(120, 118, 118);
+  border-top: calc(var(--cw) * 0.25) solid rgb(120, 118, 118);
+  vertical-align: center;
+  font: 550 calc(var(--cw) * 2.5) Arial, Helvetica, sans-serif;
+  color: #503b79;
+  line-height: calc(var(--cw) * 4.72);
+  margin-bottom: calc(var(--cw) * 1);
+  display: flex;
+  z-index: 2;
+}
+
+#nav-bar.sticky {
+  position: fixed;
+  background-color: #dbd2e2;
+  margin-bottom: calc(var(--cw) * 1.32);
+  height: calc(var(--cw) * 5.72);
+  line-height: calc(var(--cw) * 5.72);
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+}
+#nav-bar-logo-container {
+  display: none;
+}
+
+#nav-bar-logo {
+  flex: 10;
+  height: calc(var(--cw) * 4.5);
+  padding-top: calc(var(--cw) * 0.45);
+  padding-bottom: calc(var(--cw) * 0.3);
+  margin-right: calc(var(--cw) * 4.5);
+  left: 50%;
+  transform: translateX(50%);
+}
+
+/* nav-btn is the class for all of the buttons in the nav-bar. The hover function changes color on hover. */
+#nav-buttons {
+  flex: 90;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: calc(var(--cw) * 4);
+  margin-left: calc(var(--cw) * 4);
+}
+/* nav-btn is the class for all of the buttons in the nav-bar. The hover function changes color on hover. */
+.nav-btn {
+  /* display: inline-block; */
+  text-align: center;
+  cursor: default;
+  height: 100%;
+  /* border: solid green; */
+}
+.nav-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .nav-btn:hover {
+    color: #aa9042;
+  }
+}
+
+/* This is the block of teh page, and its width scales with the page width per variable cw too. */
+#main-page-content {
+  --cw: 0.8vw;
+  width: calc(var(--cw) * 100);
+  margin: auto;
+  font-size: 25px;
+  z-index: 0;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#banner-container {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+#wide-banner-ad {
+  margin: auto;
+  vertical-align: top;
+  width: 100%;
+}
+#narrow-banner-ad {
+  display: none;
+  margin: auto;
+  vertical-align: top;
+  width: 100%;
+}
+#banner-ad {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  background-image: url("images/WideBannerAd.webp");
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover; /* Ensures the image covers the entire element */
+}
+
+#thank-you-stay-tuned {
+  display: block;
+  align-items: center;
+}
+
+.thank-you-text {
+  font: 700 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
+  color: #1a041e;
+  /* Text Shadow Property */
+  -webkit-text-stroke-width: calc(var(--cw) * 0.05);
+  -webkit-text-stroke-color: rgb(234, 197, 72);
+  vertical-align: top;
+  margin: auto;
+  margin-bottom: calc(var(--cw) * 1.2);
+  margin-top: calc(var(--cw) * 1.2);
+}
+#showlogo2 {
+  display: none;
+  flex: 1;
+  max-width: 100%;
+  border-radius: calc(var(--cw) * 2.5);
+}
+
+.thank-you-text2 {
+  font: 600 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  -webkit-text-stroke-width: calc(var(--cw) * 0.15);
+  -webkit-text-stroke-color: #421669;
+  vertical-align: top;
+  margin: 0;
+  margin-top: calc(var(--cw) * 2.5);
+  margin-bottom: calc(var(--cw) * 1.2);
+  display: none;
+}
+
+#home-page {
+  width: 100%;
+}
+/* Here's the stuff for the main page content (e.g., DFT show announcement), 
+with pieces similarly scaling */
+#show-announcement {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+.link-inherit {
+  color: inherit; /* Inherit color from parent */
+  font-size: inherit; /* Inherit font size from parent */
+  font-family: inherit; /* Inherit font family from parent */
+  text-decoration: inherit; /* Inherit text decoration (underline, etc.) */
+}
+#info-text-wide {
+  display: inline-block;
+  font: 700 calc(var(--cw) * 4.5) Arial, Helvetica, sans-serif;
+  color: #421669;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 2.2);
+}
+#ticket-sales-header {
+  height: calc(var(--cw) * 8);
+  display: none;
+  /* display: flex; */
+  flex-direction: row;
+}
+#golden-ticket {
+  flex: 20;
+  height: calc(var(--cw) * 8);
+  margin-right: calc(var(--cw) * 2);
+}
+#tickets-text {
+  display: flex;
+  flex-direction: column;
+}
+#line1 {
+  flex: 3;
+}
+#line2 {
+  font: 700 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  flex: 1;
+}
+
+#info-text-narrow {
+  font: 800 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
+  color: #421669;
+  vertical-align: top;
+  line-height: calc(var(--cw) * 5.5);
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.2);
+  display: none;
+}
+#ticket-sales-header-narrow {
+  height: calc(var(--cw) * 8);
+  display: flex;
+  flex-direction: row;
+}
+#golden-ticket-narrow {
+  flex: 20;
+  height: calc(var(--cw) * 8);
+  margin-right: calc(var(--cw) * 2);
+}
+#tickets-text-narrow {
+  display: flex;
+  flex-direction: column;
+}
+#line1-narrow {
+  flex: 3;
+}
+#line2-narrow {
+  font: 700 calc(var(--cw) * 2) Arial, Helvetica, sans-serif;
+  flex: 1;
+}
+
+#logo-container {
+  width: 100%;
+  aspect-ratio: 13.889 / 7.403;
+  position: relative;
+  /* display: inline-block; */
+  display: none;
+  overflow: hidden;
+  border-radius: calc(var(--cw) * 2.5);
+}
+#showlogo {
+  margin: auto;
+  vertical-align: top;
+  width: 100%;
+}
+.zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 4s ease;
+  transform-origin: center center;
+}
+.zoom-in {
+  transform: scale(1.12);
+}
+
+#show-info-wide {
+  position: absolute;
+  width: 100%;
+  font: 700 calc(var(--cw) * 3.2) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#show-info-narrow {
+  width: 100%;
+  font: 600 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  display: none;
+  padding-top: 0px;
+  margin-top: calc(var(--cw) * 2);
+}
+/* @media screen and (max-width: 1317px) {
+  #show-info-wide,
+  #info-text-wide {
+    display: none;
+  }
+  #show-info-narrow {
+    display: none;
+  }
+  #info-text-narrow {
+    display: block;
+  }
+} */
+#credits {
+  width: 95%;
+  margin: auto;
+  margin-top: calc(var(--cw) * 3);
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+}
+#staff-credit-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font: 600 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  text-shadow: 0 0 calc(var(--cw) * 2.5) rgba(213, 131, 186, 1);
+}
+.first-credit-row {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: calc(var(--cw) * 2.5);
+}
+#second-credit-row {
+  width: 90%;
+  margin: auto;
+  margin-top: calc(var(--cw) * 2);
+  text-align: center;
+  font: 300 calc(var(--cw) * 2) Arial, Helvetica, sans-serif;
+}
+.third-credit-row {
+  width: 90%;
+  margin: auto;
+  margin-top: calc(var(--cw) * 2);
+  text-align: center;
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+}
+
+#performance-info {
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 3);
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+}
+#performance-text-items {
+  width: 95%;
+  margin: auto;
+}
+.performance-text {
+  font: 500 calc(var(--cw) * 3.5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  margin-bottom: calc(var(--cw) * 3);
+}
+
+.smaller-text {
+  font: 500 calc(var(--cw) * 2) Arial, Helvetica, sans-serif;
+}
+
+#audition-info {
+  border-top: calc(var(--cw) * 0.25) solid rgb(234, 197, 72);
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 5);
+  flex-direction: column;
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  display: flex;
+  display: none;
+}
+
+#workshop-info,
+#cast-info {
+  border-top: calc(var(--cw) * 0.25) solid rgb(234, 197, 72);
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 5);
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+}
+
+#event-info {
+  display: none;
+  border-top: calc(var(--cw) * 0.25) solid rgb(234, 197, 72);
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 5);
+  font: 300 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+}
+
+#audition-title,
+#workshop-title,
+#event-title,
+#cast-title {
+  font: 700 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  text-decoration: underline;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.9);
+  padding-top: calc(var(--cw) * 2.2);
+  display: none;
+}
+#event-title {
+  text-decoration: none;
+  font-style: italic;
+}
+#event-image {
+  margin: auto;
+  vertical-align: top;
+  width: 100%;
+}
+
+#audition-text-items,
+#workshop-text-items {
+  width: 95%;
+  margin: auto;
+}
+.audition-text {
+  font: 500 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  margin-bottom: calc(var(--cw) * 3);
+}
+.workshop-text {
+  font: 500 calc(var(--cw) * 3.5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  margin-bottom: calc(var(--cw) * 3);
+}
+.ital {
+  font-style: italic;
+  margin-top: calc(var(--cw) * 4);
+}
+.put-border {
+  border: solid white;
+  width: 70%;
+  margin: auto;
+  padding-top: calc(var(--cw) * 2);
+  padding-bottom: calc(var(--cw) * 2);
+  margin-top: calc(var(--cw) * 5);
+}
+.space {
+  margin-top: calc(var(--cw) * 4.2);
+}
+#char-breakdown,
+#workshop-signup {
+  color: rgb(234, 197, 72);
+}
+
+#workshop-signup-coming {
+  display: none;
+}
+
+#cast-list {
+  font: 550 calc(var(--cw) * 3.5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  /* margin: auto; */
+}
+.cast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: calc(var(--cw) * 1);
+}
+.character-name {
+  font-style: italic;
+  text-align: right;
+  margin-right: calc(var(--cw) * 4);
+  flex: 1.1;
+}
+.actor-name {
+  text-align: left;
+  flex: 0.9;
+}
+#unformatted-cast {
+  font: 550 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+}
+#ensemble-title {
+  text-decoration: underline;
+}
+#ensemble-list {
+  margin-top: calc(var(--cw) * 2.2);
+  line-height: calc(var(--cw) * 4.7);
+  margin-bottom: calc(var(--cw) * 4.2);
+}
+
+/* #auditon-info {
+  border-top: calc(var(--cw) * 0.25) solid rgb(120, 118, 118);
+} */
+#auditions-coming {
+  width: 95%;
+  font: 700 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
+  color: rgb(234, 197, 72);
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.9);
+  margin-top: calc(var(--cw) * 5);
+  padding-top: calc(var(--cw) * 5);
+  display: none;
+}
+#stay-tuned {
+  display: none;
+}
+.audition-button {
+  margin: auto;
+  margin-bottom: calc(var(--cw) * 2);
+  padding: calc(var(--cw) * 0.8);
+  padding-left: calc(var(--cw) * 1.2);
+  padding-right: calc(var(--cw) * 1.2);
+  width: 95%;
+  background-color: #e5c242;
+  font: 550 calc(var(--cw) * 3.3) Arial, Helvetica, sans-serif;
+  text-shadow: none;
+  color: #a62a79;
+  border-radius: calc(var(--cw) * 1.2);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+#audition-packet-text {
+  padding-top: calc(var(--cw) * 2);
+  flex: 8;
+}
+#audition-packets {
+  flex: 3;
+}
+#audition-packets {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.packet {
+  flex: 1;
+  margin: auto;
+  margin-bottom: calc(var(--cw) * 1);
+  margin-top: calc(var(--cw) * 1);
+  padding: calc(var(--cw) * 1.5);
+  padding-left: calc(var(--cw) * 1.2);
+  padding-right: calc(var(--cw) * 1.2);
+  width: 70%;
+  background-color: #a62a79;
+  font: 450 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  text-shadow: none;
+  color: #e5c242;
+  border-radius: calc(var(--cw) * 1.2);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.age {
+  flex: 7;
+}
+.agerange {
+  flex: 2;
+  font: 450 calc(var(--cw) * 1.3) Arial, Helvetica, sans-serif;
+}
+
+#audition-signup-text {
+  margin: auto;
+}
+.audition-button-link {
+  text-decoration: none;
+}
+#workshop-info {
+  display: none;
+}
+/* Past shows page content */
+#past-shows {
+  height: auto;
+  width: 100%;
+  display: none;
+}
+#past-shows-title {
+  font: 700 calc(var(--cw) * 7) Arial, Helvetica, sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 4);
+}
+#show-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo-block {
+  flex: 0 0 31.5%;
+  height: calc(var(--cw) * 25);
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(var(--cw) * 1);
+  margin-bottom: calc(var(--cw) * 2);
+  width: 27%;
+  border: calc(var(--cw) * 0.25) solid white;
+}
+/* Center the last row's children */
+/* May need to adjust the "n+2" to be n+1 if there is just 1 in the row at some point*/
+/* And may need to get rid of this if there are actually 3 in the last row */
+.logo-block:nth-last-child(-n + 2):nth-last-child(-n + 2) {
+  margin-left: auto; /* Auto margin pushes the last row's children to the center */
+  margin-right: auto; /* Auto margin pushes the last row's children to the center */
+}
+.past-show-logo {
+  max-width: 90%;
+  max-height: calc(var(--cw) * 20);
+  margin: auto;
+}
+.past-show-year {
+  font: 400 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: #f4f4f4;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.2);
+}
+
+/* Donations page content */
+#donations-page {
+  height: auto;
+  width: 100%;
+  display: none;
+  background: rgb(255, 255, 255, 0.4);
+  margin-top: calc(var(--cw) * 2.5);
+}
+#donations-title {
+  font: 700 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.9);
+  padding: calc(var(--cw) * 2.2);
+}
+#donations-page-text {
+  width: 75%;
+  margin: auto;
+}
+.donations-text {
+  font: 500 calc(var(--cw) * 3.2) Arial, Helvetica, sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 3);
+}
+.donations-text a {
+  color: inherit;
+}
+
+/* About page content */
+#about-page {
+  height: auto;
+  width: 100%;
+  display: none;
+  background: rgb(255, 255, 255, 0.4);
+  margin-top: calc(var(--cw) * 2.5);
+}
+#about-page p {
+  text-align: left;
+}
+.about-title {
+  font: 700 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 2.3);
+  padding-top: calc(var(--cw) * 2.2);
+}
+#about-page-text {
+  width: 80%;
+  margin: auto;
+}
+.about-text {
+  font: 520 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 3);
+  text-indent: calc(var(--cw) * 5);
+}
+.board-text {
+  font: 520 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 3);
+  margin: auto;
+}
+#box-around {
+  width: 75%;
+  border: #3b0a68;
+  border-style: solid;
+  border-width: calc(var(--cw) * 0.2);
+  margin: auto;
+  padding: calc(var(--cw) * 1.5);
+  margin-top: calc(var(--cw) * 2.3);
+}
+.join-board-title {
+  font: 700 calc(var(--cw) * 3.2) Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 2.3);
+}
+.join-board-text {
+  font: 520 calc(var(--cw) * 2.5) Arial, Helvetica, sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 3);
+  margin: auto;
+}
+#board-application {
+  color: #3b0a68;
+}
+
+.history-title {
+  font: 700 calc(var(--cw) * 4) Arial, Helvetica, sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 2.3);
+  padding-top: calc(var(--cw) * 4.8);
+}
+#old-deerfield {
+  width: 100%;
+  margin-bottom: calc(var(--cw) * 2);
+}
+#history-image {
+  width: 100%;
+}
+
+#ADA-title {
+  font: 600 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  padding-top: calc(var(--cw) * 8);
+}
+#ADA-notice {
+  font: 400 calc(var(--cw) * 2.5) Arial, Helvetica, sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 6);
+  text-indent: calc(var(--cw) * 5);
+}
+
+/* The directions bar scales with the page width, using the variable cw (content width) 
+to avoid the need for small fractions.*/
+#direction-bar {
+  --cw: 0.8vw;
+  width: 95vw;
+  position: relative;
+  left: 0;
+  top: 0;
+  height: calc(var(--cw) * 4);
+  border-bottom: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+  border-top: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+  background-image: url("images/map-graphic4.webp");
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain, depending on your preference */
+  background-position: center; /* This centers the background horizontally */
+  margin: auto;
+  margin-top: calc(var(--cw) * 7);
+  margin-bottom: calc(var(--cw) * 1);
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+#directions-intro {
+  flex: 1.2;
+  margin: auto;
+  text-align: center;
+  font: 900 calc(var(--cw) * 2.3) Arial, Helvetica, sans-serif;
+  font-style: italic;
+  color: #0f256d;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Subtle white text shadow */
+}
+.map-pin {
+  height: calc(var(--cw) * 2.2);
+}
+.directions {
+  flex: 1;
+  margin: auto;
+  text-align: center;
+  font: 900 calc(var(--cw) * 2.3) Arial, Helvetica, sans-serif;
+  color: #0f256d;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); /* Subtle white text shadow */
+}
+
+/* The icon bar scales with the page width, using the variable cw (content width) 
+to avoid the need for small fractions.*/
+#icon-bar {
+  --cw: 0.8vw;
+  width: 95vw;
+  position: relative;
+  padding-top: calc(var(--cw) * 3);
+  padding-bottom: calc(var(--cw) * 3);
+  left: 0;
+  top: 0;
+  height: calc(var(--cw) * 15);
+  border-bottom: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+  border-top: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0px,
+    rgba(255, 255, 255, 0.1) 33%,
+    rgba(255, 255, 255, 0.05) 66%,
+    rgba(255, 255, 255, 0) 99%
+  );
+  margin: auto;
+  margin-top: calc(var(--cw) * 7);
+  margin-bottom: calc(var(--cw) * 3.72);
+  z-index: 2;
+}
+
+/* The icons div holds the icons within the icon bar, centered there and providin flex/space */
+#icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: center;
+  width: 90%;
+  margin: auto;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Here's the settings for the icons in the icon-bar, defining height and hover color */
+.icon-item {
+  height: calc(var(--cw) * 11.11);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-item:hover {
+  box-shadow: 0 0 calc(var(--cw) * 0.37) calc(var(--cw) * 0.08) #888;
+}
+
+/* Next is the photo box, which also scales with the page width, 
+using the variable cw (content width), to avoid the need for small fractions. */
+#photo-box {
+  --cw: 0.8vw;
+  width: 95vw;
+  margin: auto;
+  margin-top: calc(var(--cw) * 7);
+  position: relative;
+  padding-top: calc(var(--cw) * 3);
+  padding-bottom: calc(var(--cw) * 3);
+  left: 0;
+  top: 0;
+  height: calc(var(--cw) * 50);
+  vertical-align: center;
+  overflow: hidden;
+  margin-top: calc(var(--cw) * 7);
+  margin-bottom: calc(var(--cw) * 3.72);
+  /* border:solid white */
+}
+
+/* This is the photo in the photo box. Will want to have this change from photo to photo if possible */
+.photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+}
+.photo.active {
+  opacity: 1;
+}
+
+#bottom-bar {
+  --cw: 0.8vw;
+  /* width: calc(var(--cw) * 100); */
+  position: relative;
+  margin: auto;
+  bottom: 0px;
+  /* width: 100%; */
+  padding: 20px;
+  padding-top: calc(var(--cw) * 3);
+  padding-left: calc(var(--cw) * 3);
+  margin-top: calc(var(--cw) * 15);
+  color: #503b79;
+  background: rgb(255, 255, 255, 0.7);
+}
+#top-row {
+  display: flex;
+  flex-direction: row;
+}
+#address-name {
+  display: flex;
+  flex-direction: column;
+  margin-right: calc(var(--cw) * 7);
+}
+#DFT-name {
+  font: 700 calc(var(--cw) * 3.1) Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: calc(var(--cw) * 4);
+}
+#DFT-address {
+  font: 600 calc(var(--cw) * 2.5) Arial, Helvetica, sans-serif;
+}
+#for-more-info {
+  margin-top: calc(var(--cw) * 2.4);
+  font: 500 calc(var(--cw) * 3) Arial, Helvetica, sans-serif;
+}
+#facebook {
+  height: calc(var(--cw) * 7);
+  margin-right: calc(var(--cw) * 1.5);
+}
+#instagram {
+  height: calc(var(--cw) * 7);
+}
+
+/* Other media queries */
+@media screen and (max-width: 1317px) {
+  #program-header {
+    /* --cw: 0.95vw; */
+    --cw: calc((0.0015 * calc(1200px - 100vw)) + 0.8vw);
+    width: calc(var(--cw) * 100);
+    height: auto;
+  }
+  .after-header {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8) 0px,
+      rgba(255, 255, 255, 0.6) 15vw,
+      rgba(255, 255, 255, 0.3) 30vw,
+      rgba(255, 255, 255, 0) 60vw
+    ); /* This helps keep the top brighter for text there, when narrower */
+  }
+}
+@media screen and (max-width: 1177px) {
+  #main-page-content,
+  #nav-bar {
+    --cw: calc((0.0015 * calc(1200px - 100vw)) + 0.8vw);
+    width: calc(var(--cw) * 100);
+    height: auto;
+  }
+}
+@media screen and (max-width: 1177px) {
+  #nav-bar.sticky {
+    height: calc(var(--cw) * 8.72);
+    line-height: calc(var(--cw) * 8.72);
+  }
+  #nav-bar-logo {
+    height: calc(var(--cw) * 6.5);
+    left: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@media screen and (max-width: 1177px) {
+  #direction-bar {
+    height: calc(var(--cw) * 9);
+    display: block;
+  }
+  #directions-intro {
+    display: inline-block;
+    width: 100%;
+    flex: none;
+    margin-top: calc(var(--cw) * 0.6);
+    margin-bottom: calc(var(--cw) * 0.4);
+  }
+  .directions {
+    flex: none;
+    display: inline-block;
+    width: 49%;
+  }
+  #directions-intro,
+  .directions {
+    font: 900 calc(var(--cw) * 3.1) Arial, Helvetica, sans-serif;
+  }
+  .map-pin {
+    height: calc(var(--cw) * 2.6);
+  }
+}
+@media screen and (max-width: 600px) {
+  #direction-bar {
+    height: calc(var(--cw) * 10);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #main-page-content,
+  #program-header,
+  #icon-bar {
+    --cw: 0.95vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  #DFT-name,
+  #DFT-address,
+  #facebook,
+  #instagram {
+    --cw: 1.2vw;
+  }
+  #for-more-info {
+    --cw: 0.88vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .donations-text,
+  .about-text,
+  .board-text {
+    font: 520 calc(var(--cw) * 3.6) Arial, Helvetica, sans-serif;
+  }
+  .about-title,
+  .history-title {
+    font: 700 calc(var(--cw) * 5.5) Arial, Helvetica, sans-serif;
+  }
+  #about-page-text,
+  #donations-page-text {
+    width: 89%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #nav-bar {
+    --cw: 0.95vw;
+    font: 575 calc(var(--cw) * 2.7) Arial-Narrow, Helvetica, sans-serif;
+    line-height: calc(var(--cw) * 4.92);
+    height: calc(var(--cw) * 4.92);
+    border-bottom: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+    border-top: calc(var(--cw) * 0.4) solid rgb(120, 118, 118);
+  }
+  #nav-bar.sticky {
+    --cw: 0.95vw;
+    font: 550 calc(var(--cw) * 2.5) Arial, Helvetica, sans-serif;
+    line-height: calc(var(--cw) * 8.72);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #wide-banner-ad {
+    display: none;
+  }
+  #narrow-banner-ad {
+    display: inline;
+  }
+}
