@@ -189,7 +189,7 @@ to avoid the need for small fractions.*/
 
 .thank-you-text {
   font: 700 calc(var(--cw) * 5) Arial, Helvetica, sans-serif;
-  color: purple;
+  color: white;
   /* Text Shadow Property */
   -webkit-text-stroke-width: calc(var(--cw) * 0.05);
   -webkit-text-stroke-color: rgb(234, 197, 72);

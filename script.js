@@ -97,10 +97,6 @@ deerfieldtyaBtn.addEventListener("click", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  //Change version number of css file
-  var cssLink = document.getElementById("main-css");
-  cssLink.href = cssLink.href + "?v=" + Date.now();
-
   //zoom the show log in its container
   var image = document.getElementById("showlogo");
   image.classList.add("zoom-in");
