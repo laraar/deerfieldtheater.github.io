@@ -147,8 +147,8 @@ to avoid the need for small fractions.*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-right: calc(var(--cw) * 4);
-  margin-left: calc(var(--cw) * 4);
+  margin-right: calc(var(--cw) * 12);
+  margin-left: calc(var(--cw) * 12);
 }
 /* nav-btn is the class for all of the buttons in the nav-bar. The hover function changes color on hover. */
 .nav-btn {
@@ -232,7 +232,7 @@ to avoid the need for small fractions.*/
   margin-top: calc(var(--cw) * 1.2);
 }
 #showlogo2 {
-  display: none;
+  display: inline-block;
   flex: 1;
   max-width: 100%;
   border-radius: calc(var(--cw) * 2.5);
@@ -285,6 +285,7 @@ with pieces similarly scaling */
 }
 
 #tickets {
+  display: none;
   width: 100%;
   margin: auto;
   border: yellow;
@@ -318,7 +319,7 @@ with pieces similarly scaling */
   margin-bottom: calc(var(--cw) * 1);
 }
 #announcing-show {
-  display: none;
+  display: block;
 }
 #ticket-sales-header {
   height: calc(var(--cw) * 8);
@@ -386,10 +387,10 @@ with pieces similarly scaling */
 
 #logo-container {
   width: 100%;
-  aspect-ratio: 13.889 / 12;
+  aspect-ratio: 16 /8;
   position: relative;
   /* display: inline-block; */
-  display: none;
+  display: block;
   overflow: hidden;
   border-radius: calc(var(--cw) * 2.5);
 }
@@ -428,8 +429,8 @@ with pieces similarly scaling */
     600 calc(var(--cw) * 5) Arial,
     Helvetica,
     sans-serif;
-  color: #9fca35;
-  display: none;
+  color: #dcd8d8;
+  display: block;
   padding-top: 2vw;
   margin-top: calc(var(--cw) * 2);
 }
@@ -438,7 +439,7 @@ with pieces similarly scaling */
     600 calc(var(--cw) * 4) Arial,
     Helvetica,
     sans-serif;
-  display: none;
+  display: block;
 }
 #auditions-link {
   color: inherit;
@@ -519,7 +520,7 @@ with pieces similarly scaling */
   margin: auto;
   /* margin-top: calc(var(--cw) * 3); */
   /* display: flex; */
-  display: block;
+  display: none;
   flex-direction: column;
   font:
     300 calc(var(--cw) * 3) Arial,
@@ -586,7 +587,7 @@ with pieces similarly scaling */
   margin: auto;
   /* margin-top: calc(var(--cw) * 5); */
   /* display: flex; */
-  display: block;
+  display: none;
   flex-direction: column;
   font:
     300 calc(var(--cw) * 3) Arial,
@@ -1060,10 +1061,10 @@ with pieces similarly scaling */
 /* Center the last row's children */
 /* May need to adjust the "n+2" to be n+1 if there is just 1 in the row at some point*/
 /* And may need to get rid of this if there are actually 3 in the last row */
-.logo-block:nth-last-child(-n + 2):nth-last-child(-n + 2) {
-  margin-left: auto; /* Auto margin pushes the last row's children to the center */
-  margin-right: auto; /* Auto margin pushes the last row's children to the center */
-}
+/* .logo-block:nth-last-child(-n + 2):nth-last-child(-n + 2) { */
+/* margin-left: auto; Auto margin pushes the last row's children to the center */
+/* margin-right: auto; Auto margin pushes the last row's children to the center */
+/* } */
 .past-show-logo {
   max-width: 90%;
   max-height: calc(var(--cw) * 20);

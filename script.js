@@ -11,8 +11,8 @@ const pastShows = document.getElementById("past-shows");
 const donationsPage = document.getElementById("donations-page");
 const aboutPage = document.getElementById("about-page");
 const photoBox = document.getElementById("photo-box");
-const theaterdBtn = document.getElementById("theaterd");
-const deerfieldtyaBtn = document.getElementById("deerfieldtya");
+// const theaterdBtn = document.getElementById("theaterd");
+// const deerfieldtyaBtn = document.getElementById("deerfieldtya");
 
 function changeTextColor(color) {
   // Get all elements with the class 'example-text'
@@ -83,20 +83,20 @@ aboutBtn.addEventListener("click", function () {
 });
 
 // Add a click event listener to the clickable object
-theaterdBtn.addEventListener("click", function () {
-  // Go to DFT page
-  // window.location.href = "https://www.theaterd.com";
-  window.location.href = "https://www.theaterd.com";
-  window.location.href = "https://www.deerfieldtheater.com";
-});
+// theaterdBtn.addEventListener("click", function () {
+// Go to DFT page
+// window.location.href = "https://www.theaterd.com";
+//   window.location.href = "https://www.theaterd.com";
+//   window.location.href = "https://www.deerfieldtheater.com";
+// });
 
 // Add a click event listener to the clickable object
-deerfieldtyaBtn.addEventListener("click", function () {
-  // Go to DTYA page
-  // window.location.href = "https://www.deerfieldfamilytheater.com/DTYA-index.html";
-  window.location.href = "https://www.deerfieldfamilytheater.com/DTYA/index.html";
-  window.location.href = "https://www.deerfieldtheater.com";
-});
+// deerfieldtyaBtn.addEventListener("click", function () {
+// Go to DTYA page
+// window.location.href = "https://www.deerfieldfamilytheater.com/DTYA-index.html";
+//   window.location.href = "https://www.deerfieldfamilytheater.com/DTYA/index.html";
+//   window.location.href = "https://www.deerfieldtheater.com";
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   //zoom the show log in its container
