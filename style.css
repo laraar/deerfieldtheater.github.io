@@ -1058,6 +1058,16 @@ with pieces similarly scaling */
   width: 27%;
   border: calc(var(--cw) * 0.25) solid white;
 }
+#production-staff {
+  display: block;
+  color: white;
+  font:
+    700 calc(var(--cw) * 3) Arial,
+    Helvetica,
+    sans-serif;
+  margin-top: calc(var(--cw) * 2);
+}
+
 /* Center the last row's children */
 /* May need to adjust the "n+2" to be n+1 if there is just 1 in the row at some point*/
 /* And may need to get rid of this if there are actually 3 in the last row */
