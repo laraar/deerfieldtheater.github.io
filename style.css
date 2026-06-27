@@ -439,7 +439,7 @@ with pieces similarly scaling */
     600 calc(var(--cw) * 4) Arial,
     Helvetica,
     sans-serif;
-  display: block;
+  display: none;
 }
 #auditions-link {
   color: inherit;
@@ -550,7 +550,7 @@ with pieces similarly scaling */
 }
 
 #audition-info {
-  border-top: calc(var(--cw) * 0.25) solid rgb(234, 197, 72);
+  border-top: calc(var(--cw) * 0.25) solid #ffffff;
   width: 95%;
   padding-top: calc(var(--cw) * 2);
   margin: auto;
@@ -560,7 +560,7 @@ with pieces similarly scaling */
     300 calc(var(--cw) * 3) Arial,
     Helvetica,
     sans-serif;
-  color: #9fca35;
+  color: #ffffff;
   display: flex;
   display: block;
 }
@@ -640,8 +640,9 @@ with pieces similarly scaling */
     700 calc(var(--cw) * 5) Arial,
     Helvetica,
     sans-serif;
-  color: #ecbd4c;
+  color: #ffffff;
   text-decoration: underline;
+  text-decoration-color: #d83831;
   margin: 0;
   margin-bottom: calc(var(--cw) * 1.9);
   padding-top: calc(var(--cw) * 2.2);
@@ -744,7 +745,7 @@ with pieces similarly scaling */
     500 calc(var(--cw) * 4) Arial,
     Helvetica,
     sans-serif;
-  color: #ecbd4c;
+  color: #ffffff;
   margin-bottom: calc(var(--cw) * 3);
 }
 .workshop-text {
@@ -857,7 +858,7 @@ with pieces similarly scaling */
   margin-top: calc(var(--cw) * 4.2);
 }
 .text-border {
-  border: solid #9fca35;
+  border: solid #d83831;
   padding: calc(var(--cw) * 1.2);
   width: 87%;
   margin: auto;
@@ -867,7 +868,9 @@ with pieces similarly scaling */
 }
 #workshop-signup,
 #audition-signup {
-  color: #9fca35;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #d83831;
 }
 
 #workshop-signup-coming,
