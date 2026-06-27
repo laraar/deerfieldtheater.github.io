@@ -869,8 +869,13 @@ with pieces similarly scaling */
 #workshop-signup,
 #audition-signup {
   color: #ffffff;
+  text-decoration: none;
+  text-decoration-color: #d83831;
+}
+#red-underline {
   text-decoration: underline;
   text-decoration-color: #d83831;
+  display: inline-block;
 }
 
 #workshop-signup-coming,
