@@ -546,6 +546,14 @@ with pieces similarly scaling */
   display: block;
 }
 
+#production-staff-info {
+  border-top: calc(var(--cw) * 0.25) solid #ffffff;
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 5);
+}
+
 #audition-info {
   border-top: calc(var(--cw) * 0.25) solid #ffffff;
   width: 95%;
@@ -632,6 +640,7 @@ with pieces similarly scaling */
 #workshop-title,
 .event-title,
 #cast-title,
+#production-staff-title,
 .later-show-announce-title {
   font:
     700 calc(var(--cw) * 5) Arial,
@@ -1070,6 +1079,39 @@ with pieces similarly scaling */
     Helvetica,
     sans-serif;
   margin-top: calc(var(--cw) * 2);
+}
+
+/* Full production staff list: flows into as many newspaper-style columns as
+   fit (via column-width), rather than a forced grid. This avoids the ragged
+   whitespace that happens when a grid tries to line up rows of very
+   different heights. Each entry stacks role above name so nothing wraps
+   awkwardly mid-line. */
+#full-staff-list {
+  column-width: calc(var(--cw) * 25);
+  column-gap: calc(var(--cw) * 3.5);
+  width: 90%;
+  margin: calc(var(--cw) * 1.8) auto 0;
+  text-align: center;
+}
+.staff-entry {
+  break-inside: avoid;
+  margin-bottom: calc(var(--cw) * 1.5);
+}
+.staff-role {
+  display: block;
+  font:
+    italic 600 calc(var(--cw) * 1.9) Arial,
+    Helvetica,
+    sans-serif;
+  color: #dfbdb2;
+}
+.staff-name {
+  display: block;
+  font:
+    600 calc(var(--cw) * 2.4) Arial,
+    Helvetica,
+    sans-serif;
+  color: #ffffff;
 }
 
 /* Center the last row's children */
