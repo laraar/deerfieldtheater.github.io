@@ -382,6 +382,12 @@ with pieces similarly scaling */
   flex: 1;
 }
 
+.show-image-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 #logo-container {
   width: 100%;
   aspect-ratio: 16 /8;
@@ -546,6 +552,37 @@ with pieces similarly scaling */
   display: block;
 }
 
+#ticket-info {
+  width: 95%;
+  margin: auto;
+  margin-top: calc(var(--cw) * 3);
+  text-align: center;
+}
+#ticket-info-text {
+  font:
+    500 calc(var(--cw) * 3.2) Arial,
+    Helvetica,
+    sans-serif;
+  color: #ffffff;
+  margin-bottom: calc(var(--cw) * 2);
+}
+#ticket-info-button {
+  display: inline-block;
+  background-color: #d83831;
+  color: #ffffff;
+  font:
+    700 calc(var(--cw) * 3) Arial,
+    Helvetica,
+    sans-serif;
+  text-decoration: none;
+  padding: calc(var(--cw) * 1.2) calc(var(--cw) * 3.5);
+  border-radius: calc(var(--cw) * 1.2);
+  margin-bottom: calc(var(--cw) * 1);
+}
+#ticket-info-button:hover {
+  background-color: #b82d27;
+}
+
 #production-staff-info {
   border-top: calc(var(--cw) * 0.25) solid #ffffff;
   width: 95%;
@@ -641,6 +678,7 @@ with pieces similarly scaling */
 .event-title,
 #cast-title,
 #production-staff-title,
+#ticket-info-title,
 .later-show-announce-title {
   font:
     700 calc(var(--cw) * 5) Arial,
