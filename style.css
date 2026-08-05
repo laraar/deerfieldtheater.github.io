@@ -1463,19 +1463,18 @@ using the variable cw (content width), to avoid the need for small fractions. */
 #photo-box {
   --cw: 0.8vw;
   width: 95vw;
+  /* All carousel photos are 3:2, so the box's height is derived directly
+     from its width at that ratio. This means each photo spans the full
+     width of the box with no cropping and no letterboxing, since the box
+     shape always matches the photo shape. If a photo with a different
+     ratio is ever added, it will be cropped (via object-fit: cover on
+     .photo below) to fill this 3:2 box. */
+  aspect-ratio: 3 / 2;
   margin: auto;
-  margin-top: calc(var(--cw) * 7);
   position: relative;
-  padding-top: calc(var(--cw) * 3);
-  padding-bottom: calc(var(--cw) * 3);
-  left: 0;
-  top: 0;
-  height: calc(var(--cw) * 50);
-  vertical-align: center;
   overflow: hidden;
   margin-top: calc(var(--cw) * 7);
   margin-bottom: calc(var(--cw) * 3.72);
-  /* border:solid white */
 }
 
 /* This is the photo in the photo box. Will want to have this change from photo to photo if possible */
@@ -1485,6 +1484,8 @@ using the variable cw (content width), to avoid the need for small fractions. */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: opacity 1s ease-in-out;
 }
 .photo.active {

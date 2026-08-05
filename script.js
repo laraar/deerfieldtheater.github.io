@@ -36,8 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
     image.classList.add("zoom-in");
   }
 
-  // Photo slideshow (home page only)
-  var slides = document.querySelectorAll(".photo");
+  // Photo slideshow (home page only). The slide order is shuffled fresh on
+  // every page load, so it varies from visit to visit.
+  var slides = Array.from(document.querySelectorAll(".photo"));
+  for (var s = slides.length - 1; s > 0; s--) {
+    var randomIndex = Math.floor(Math.random() * (s + 1));
+    var temp = slides[s];
+    slides[s] = slides[randomIndex];
+    slides[randomIndex] = temp;
+  }
   if (slides.length > 0) {
     var currentSlide = 0;
     // Set the initial opacity of all slides to 0 except for the first one
