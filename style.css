@@ -70,7 +70,7 @@ its width becomes dynamic for narrow than 1317 and 1177 */
 #program-header {
   height: 135px;
   margin: auto;
-  padding-bottom: calc(1.9 * 0.8vw);
+  padding-bottom: calc(1.2 * 0.8vw);
   text-align: center;
   display: block;
   z-index: 1;
