@@ -553,9 +553,11 @@ with pieces similarly scaling */
 }
 
 #ticket-info {
+  border-top: calc(var(--cw) * 0.25) solid #ffffff;
   width: 95%;
   margin: auto;
-  margin-top: calc(var(--cw) * 3);
+  margin-top: calc(var(--cw) * 5);
+  padding-top: calc(var(--cw) * 2);
   text-align: center;
 }
 #ticket-info-text {
