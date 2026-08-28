@@ -1184,6 +1184,65 @@ with pieces similarly scaling */
   background: rgb(255, 255, 255, 0.4);
   margin-top: calc(var(--cw) * 2.5);
 }
+
+/* Volunteer page content */
+#volunteer-page {
+  height: auto;
+  width: 100%;
+  background: rgb(255, 255, 255, 0.4);
+  margin-top: calc(var(--cw) * 2.5);
+}
+#volunteer-title {
+  font:
+    700 calc(var(--cw) * 4) Arial,
+    Helvetica,
+    sans-serif;
+  color: #3d0565;
+  vertical-align: top;
+  margin: 0;
+  margin-bottom: calc(var(--cw) * 1.9);
+  padding: calc(var(--cw) * 2.2);
+}
+#volunteer-page-text {
+  width: 75%;
+  margin: auto;
+}
+#volunteer-list {
+  column-width: calc(var(--cw) * 25);
+  column-gap: calc(var(--cw) * 3.5);
+  width: 100%;
+  margin: 0 auto calc(var(--cw) * 3);
+  text-align: center;
+}
+.volunteer-entry {
+  font:
+    520 calc(var(--cw) * 3) Arial,
+    Helvetica,
+    sans-serif;
+  color: #3b0a68;
+  margin-bottom: calc(var(--cw) * 1.5);
+  break-inside: avoid;
+}
+#volunteer-cta {
+  text-align: center;
+  margin-top: calc(var(--cw) * 1);
+  margin-bottom: calc(var(--cw) * 4);
+}
+#volunteer-cta-button {
+  display: inline-block;
+  background-color: #d83831;
+  color: #ffffff;
+  font:
+    700 calc(var(--cw) * 3) Arial,
+    Helvetica,
+    sans-serif;
+  text-decoration: none;
+  padding: calc(var(--cw) * 1.2) calc(var(--cw) * 3.5);
+  border-radius: calc(var(--cw) * 1.2);
+}
+#volunteer-cta-button:hover {
+  background-color: #b82d27;
+}
 #donations-title {
   font:
     700 calc(var(--cw) * 4) Arial,
