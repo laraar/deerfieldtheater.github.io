@@ -633,10 +633,7 @@ with pieces similarly scaling */
   margin: auto;
   margin-top: calc(var(--cw) * 5);
   /* display: flex; */
-  /* Hidden until the real cast list replaces the placeholder names. Content
-     is left in place in the HTML so it's easy to bring back - just switch
-     this back to display: block. */
-  display: none;
+  display: block;
   flex-direction: column;
   font:
     300 calc(var(--cw) * 3) Arial,
@@ -749,15 +746,6 @@ with pieces similarly scaling */
   padding-bottom: calc(var(--cw) * 1);
   /* margin-top: calc(var(--cw) * 2.5); */
   display: block;
-}
-#cast-ensemble-note {
-  font:
-    italic 400 calc(var(--cw) * 2.2) Arial,
-    Helvetica,
-    sans-serif;
-  color: #dfbdb2;
-  margin-top: calc(var(--cw) * 1.5);
-  text-align: center;
 }
 .show-description {
   width: 75%;
@@ -956,8 +944,12 @@ with pieces similarly scaling */
 .cast-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: calc(var(--cw) * 1);
+  /* flex-start (rather than center) so the role label lines up with the
+     first name in multi-name rows like Adult Ensemble / Featured Dancers,
+     instead of sitting centered against the whole block of names. Makes no
+     visible difference on the normal one-line rows. */
+  align-items: flex-start;
+  margin-bottom: calc(var(--cw) * 1.6);
 }
 .character-name {
   font-style: italic;
