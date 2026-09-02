@@ -944,12 +944,16 @@ with pieces similarly scaling */
 .cast-item {
   display: flex;
   justify-content: space-between;
-  /* flex-start (rather than center) so the role label lines up with the
-     first name in multi-name rows like Adult Ensemble / Featured Dancers,
-     instead of sitting centered against the whole block of names. Makes no
-     visible difference on the normal one-line rows. */
-  align-items: flex-start;
+  /* Centered by default so 2-line role/actor rows (e.g. Susan Waverly,
+     Ethel) line up against each other. The big consolidated-name rows
+     (Adult Ensemble, Featured Dancers) override this via
+     .cast-item-group below, since they read better with the role label
+     pinned to the top of the long name list. */
+  align-items: center;
   margin-bottom: calc(var(--cw) * 1.6);
+}
+.cast-item-group {
+  align-items: flex-start;
 }
 .character-name {
   font-style: italic;
