@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-    <link rel="stylesheet" href="style.css?v=22" />
+    <link rel="stylesheet" href="style.css?v=27" />
     <link rel="preload" href="images/embossed.webp" as="image" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Deerfield Theater</title>
@@ -33,6 +33,25 @@
     <div class="after-header">
       <!-- This is the main page content after the nav-bar. Can be different per page. -->
       <div id="main-page-content">
+        <!-- Food drive promotion tied to the current show run. Swaps
+        wide/narrow images at the same 1000px breakpoint as the other banner
+        ad above. The wide graphic intentionally has decorative elements
+        (the ribbon) that extend above/below its main bar, baked into the
+        image's own transparent margins. Remove or update once the food
+        drive has ended. -->
+        <div id="food-drive-banner">
+          <img
+            id="food-drive-banner-wide"
+            src="images/FoodPantryWideBanner.webp"
+            alt="Donate Food, Win Tickets! Bring non-perishable food items to White Christmas for a chance to win 2 free tickets to our Spring Show!"
+          />
+          <img
+            id="food-drive-banner-narrow"
+            src="images/FoodPantryNarrowBanner.webp"
+            alt="Donate Food, Win Tickets! Bring non-perishable food items to White Christmas for a chance to win 2 free tickets to our Spring Show!"
+          />
+        </div>
+
         <!-- This is then the show announcement, with text (narrow or wide),
         and show image with overlay text (narrow or wide) -->
 
