@@ -599,7 +599,8 @@ with pieces similarly scaling */
   color: #ffffff;
   margin-bottom: calc(var(--cw) * 2);
 }
-#ticket-info-button {
+#ticket-info-button,
+#beau-signup-button {
   display: inline-block;
   background-color: #d83831;
   color: #ffffff;
@@ -612,8 +613,92 @@ with pieces similarly scaling */
   border-radius: calc(var(--cw) * 1.2);
   margin-bottom: calc(var(--cw) * 1);
 }
-#ticket-info-button:hover {
+#ticket-info-button:hover,
+#beau-signup-button:hover {
   background-color: #b82d27;
+}
+
+/* Spring 2027 show (Beau Jest) announcement + auditions */
+#beau-jest-info {
+  border-top: calc(var(--cw) * 0.25) solid #ffffff;
+  width: 95%;
+  padding-top: calc(var(--cw) * 2);
+  margin: auto;
+  margin-top: calc(var(--cw) * 5);
+  font:
+    300 calc(var(--cw) * 3) Arial,
+    Helvetica,
+    sans-serif;
+  color: #ffffff;
+}
+#beau-jest-poster {
+  display: block;
+  width: 55%;
+  margin: 0 auto calc(var(--cw) * 2.5) auto;
+  border-radius: calc(var(--cw) * 1);
+}
+.beau-text {
+  font:
+    500 calc(var(--cw) * 3.2) Arial,
+    Helvetica,
+    sans-serif;
+  color: #ffffff;
+  margin-bottom: calc(var(--cw) * 2);
+  line-height: 1.35;
+  /* Balances line lengths so paragraphs never end with a lone orphan word. */
+  text-wrap: balance;
+}
+.beau-label {
+  color: #dfbdb2;
+  font-size: calc(var(--cw) * 3.6);
+}
+.beau-dates {
+  color: #ecbd4c;
+  font-weight: 700;
+}
+.beau-subtitle {
+  font:
+    700 calc(var(--cw) * 4) Arial,
+    Helvetica,
+    sans-serif;
+  color: #dfbdb2;
+  margin-top: calc(var(--cw) * 3.5);
+  margin-bottom: calc(var(--cw) * 1.5);
+}
+.beau-text a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #d83831;
+}
+#beau-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--cw) * 1.5);
+  margin-bottom: calc(var(--cw) * 2.5);
+}
+.beau-download {
+  display: inline-block;
+  color: #ffffff;
+  font:
+    600 calc(var(--cw) * 2.8) Arial,
+    Helvetica,
+    sans-serif;
+  text-decoration: none;
+  border: calc(var(--cw) * 0.25) solid #dfbdb2;
+  border-radius: calc(var(--cw) * 1.2);
+  padding: calc(var(--cw) * 1) calc(var(--cw) * 2.5);
+}
+.beau-download:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.beau-contact {
+  margin-top: calc(var(--cw) * 1);
+}
+@media screen and (max-width: 1000px) {
+  #beau-jest-poster {
+    width: 85%;
+  }
 }
 
 #production-staff-info {
@@ -711,6 +796,7 @@ with pieces similarly scaling */
 #audition-title,
 #workshop-title,
 .event-title,
+#beau-jest-title,
 #cast-title,
 #production-staff-title,
 #ticket-info-title,
